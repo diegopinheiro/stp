@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="shortcut icon" href="http://www.socioambiental.org/sites/blog.socioambiental.org/files/favicon.ico" />
-    <title>Observatório Xingu | Instituto Socioambiental</title>
+    <title> Sistema Nacional de Dados da Biodiversidade de São Tomé e Principe
     <link rel="stylesheet" href="/static/leaflet/leaflet.css" />
     <link rel="stylesheet" href="/static/leaflet/leaflet.draw.css" />
     <link rel="stylesheet" href="/static/leaflet/leaflet.groupedlayercontrol.css" />
@@ -32,35 +31,30 @@
   <body>
     <div id="map" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
     <div class="absolute">
-       <img src="/static/bitmap/logo_isa_urucum.png" width=300>
     </div>   
     <script>
       lat=getQueryVariable('lat');
       lng=getQueryVariable('long');
       zoom=getQueryVariable('zoom');
-      if (lat=='') {lat=-12.8}
-      if (lng=='') {lng=-53.12}
+      if (lat=='') {lat=1.03}
+      if (lng=='') {lng=7.01}
       if (zoom=='') {zoom=10}
 
       var map = L.map('map', {drawControl: true}).setView([lat, lng], zoom);
 
-      var layer_aldeias=omnivore.kml('/static/geodata/aldeias.kml').on('ready', function() {
-        this.eachLayer(function(layer){layer.bindPopup(layer.feature.properties.name)})});
+      //var layer_aldeias=omnivore.kml('/static/geodata/aldeias.kml').on('ready', function() {
+        //this.eachLayer(function(layer){layer.bindPopup(layer.feature.properties.name)})});
 
-      var layer_localidades_ribeirinhas=omnivore.kml('/static/geodata/localidades_ribeirinhas.kml').on('ready', function() {
-        layer_localidades_ribeirinhas.setStyle({color: "#FF0000"});
-        this.eachLayer(function(layer){layer.bindPopup(layer.feature.properties.name);
-      })});
+      //var layer_localidades_ribeirinhas=omnivore.kml('/static/geodata/localidades_ribeirinhas.kml').on('ready', function() {
+        //layer_localidades_ribeirinhas.setStyle({color: "#FF0000"});
+        //this.eachLayer(function(layer){layer.bindPopup(layer.feature.properties.name);
+      //})});
 
-      var TI_serv_ov=L.esri.featureLayer({
-          url:'http://gisserver.socioambiental.org:6080/arcgis/rest/services/monitoramento/tis/MapServer/1',
-          style: {color:'brown'}
-      });
-      var UC_serv_ov=L.esri.featureLayer({
-          url:'http://gisserver.socioambiental.org:6080/arcgis/rest/services/raisg/raisg_anps/MapServer/2',
-      //    url:'http://gisserver.socioambiental.org:6080/arcgis/rest/services/monitoramento/ucs/MapServer/1',
-          style: {color:'green'}
-        });
+      //var TI_serv_ov=L.esri.featureLayer({
+          //url:'http://gisserver.socioambiental.org:6080/arcgis/rest/services/monitoramento/tis/MapServer/1',
+          //style: {color:'brown'}
+      //});
+              });
       icone_fogo=L.icon({
           iconUrl: '/static/bitmap/Fire.png',
           iconSize: [31, 27],
