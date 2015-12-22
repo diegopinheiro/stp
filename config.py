@@ -6,7 +6,8 @@ import ee
 
 # The service account email address authorized by your Google contact.
 # Set up a service account as described in the README.
-EE_ACCOUNT = '331626617071-1859m44i86rbkl5i714nrtp8mbn1d2d0@developer.gserviceaccount.com'
+EE_ACCOUNT = '3bdba9da5a93c561f6fc0b268a8a50a708485c9a@stpsndb.iam.gserviceaccount.com'
+
 
 # The private key associated with your service account in Privacy Enhanced
 # Email format (.pem suffix).  To convert a private key from the RSA format
